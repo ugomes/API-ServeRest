@@ -1,0 +1,17 @@
+{
+  "name": "teste-de-api---serverest",
+  "version": "1.0.0",
+  "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
+  "main": "index.js",
+  "scripts": {
+     "test:api": "cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^9.6.0",
+    "cypress": "^14.2.0",
+    "cypress-plugin-api": "^2.11.2"
+  }
+}
