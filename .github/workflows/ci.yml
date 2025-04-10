@@ -1,5 +1,4 @@
 name: CI
-
 on:
   push:
     branches:
@@ -8,33 +7,30 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: '0 13 * * *'  # Isso irá rodar todos os dias às 10:00 AM BRT (UTC-3)
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-
-    - name: Install dependencies
-      run: npm ci
-
-    - name: Run API tests
-      run: npx cypress run
-
-    - name: Archive Screenshots
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: cypress-screenshots
-        path: cypress/screenshots
-        retention-days: 30
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Run API tests
+        run: npx cypress run
+      - name: Archive Screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          retention-days: 30
 
 
 
