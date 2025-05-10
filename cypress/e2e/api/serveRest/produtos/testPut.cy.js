@@ -66,7 +66,7 @@ describe('Teste - Atualizar Produto Válido', () => {
 
         cy.api({
             method: 'PUT',
-            url: '/produtos/123456',
+            url: '/produtos/1234567890123456',
             headers: {
                 'Authorization': token
             },

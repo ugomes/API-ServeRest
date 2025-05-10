@@ -19,11 +19,11 @@ describe('Teste Buscar todos os Produtos Cadastrados', () => {
     });
    
 describe(' Teste Não deve buscar produto com ID inexistente', () => {
-    it('Deve não encontrar o produto com ID inexistente', () => {
+    it('Não deve  encontrar o produto com ID inexistente', () => {
         
         cy.api({
             method: 'GET',
-            url: `/produtos/12345`,
+            url: `/produtos/1234567890123456`,
             failOnStatusCode: false,
         }).then((response) => {
             expect(response.status).to.eq(400);

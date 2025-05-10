@@ -98,11 +98,11 @@ describe('GET - Carrinho', () => {
 
   });
 
-  it('Deve não encontrar o carrinho com ID inexistente', () => {
+  it('Não deve encontrar o carrinho com ID inexistente', () => {
     
     cy.api({    
         method: 'GET',
-        url: '/carrinhos/123456',
+        url: '/carrinhos/1234567890123456',
         failOnStatusCode: false,
     }).then((response) => {
         expect(response.status).to.eq(400);
