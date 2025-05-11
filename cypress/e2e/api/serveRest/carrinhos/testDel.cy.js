@@ -63,7 +63,7 @@ describe('DELETE - CONCLUIR CARRINHO - Carrinho', () => {
       });
   });
 
-  it('Deve não cancelar o carrinho - Token Ausente', () => {
+  it('Não deve cancelar o carrinho - Token Ausente', () => {
       cy.api({
         method: 'DELETE',
         url: '/carrinhos/concluir-compra',
